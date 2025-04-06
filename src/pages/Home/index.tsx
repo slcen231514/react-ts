@@ -1,25 +1,10 @@
 import { Tabs } from 'antd-mobile'
 import './style.css'
-import { useEffect, useState } from 'react'
-import { ChannelItem, fetchChannelAPI } from '@/apis/list'
+import { useTabs } from './useTabs'
 
 const Home = () => {
-    const [channels, setChannels] = useState<ChannelItem[]>([])
 
-    useEffect(() => {
-        const getChannels = async () => {
-            try {
-                const res = await fetchChannelAPI()
-                setChannels(res.data.data.channels)
-            } catch (error) {
-                console.error('Channel API error:', error)
-                throw error
-            }
-        }
-        getChannels()
-    }, [])
-
-
+    const { channels } = useTabs()
     return (
         <div>
             <div className='tabContainer'>
