@@ -23,7 +23,7 @@ httpInstance.interceptors.request.use(
 httpInstance.interceptors.response.use(
     (response) => {
         // 处理响应数据
-        return response.data;
+        return response;
     },
     (error) => {
         // 响应错误处理
