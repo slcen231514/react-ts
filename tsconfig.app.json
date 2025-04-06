@@ -6,6 +6,10 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": ".", // 设置基准目录
+    "paths": {
+      "@/*": ["src/*"], // 对应 '@' 的别名
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
